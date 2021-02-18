@@ -8,14 +8,16 @@ namespace ECS.Legacy
 {
     class FakeHeater : IHeater
     {
+        public int TurnOnCount { get; private set;}
+        public int TurnOffCount { get; private set; }
         public void TurnOn()
         {
-
+            TurnOnCount++;
         }
 
         public void TurnOff()
         {
-
+            TurnOffCount++;
         }
 
         public bool RunSelfTest()
