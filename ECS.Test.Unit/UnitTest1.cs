@@ -30,6 +30,17 @@ namespace ECS.Test.Unit
             Assert.That(uut.GetThreshold(), Is.EqualTo(5));
         }
 
+        [Test]
+        public void getTemp_temp_Is10()
+        {
+            Assert.That(uut.GetCurTemp(), Is.EqualTo(10));
+        }
+
+        [Test]
+        public void RunSelfTest_retuns_true()
+        {
+            Assert.That(uut.RunSelfTest,Is.True);
+        }
 
         [Test]
         public void Regulate_TurnOnHeater_TurnOnCountIsOne()
