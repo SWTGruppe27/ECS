@@ -18,10 +18,18 @@ namespace ECS.Test.Unit
         }
 
         [Test]
-        public void GetTreshold_Treshold_Is10()
+        public void GetThreshold_Threshold_Is10()
         {
-
+            Assert.That(uut.GetThreshold(),Is.EqualTo(15));
         }
+
+        [Test]
+        public void setThreshold_Threshold_Is5()
+        {
+            uut.SetThreshold(5);
+            Assert.That(uut.GetThreshold(), Is.EqualTo(5));
+        }
+
 
         [Test]
         public void Regulate_TurnOnHeater_TurnOnCountIsOne()
