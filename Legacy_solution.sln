@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Legacy", "ECS.Legacy\EC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5CABD59-540F-4FA8-B8A3-17B419172AE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS.Test.Unit", "ECS.Test.Unit\ECS.Test.Unit.csproj", "{5EC7CD00-E18B-4785-B0DA-D397B3B350A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Test.Unit", "ECS.Test.Unit\ECS.Test.Unit.csproj", "{5EC7CD00-E18B-4785-B0DA-D397B3B350A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
