@@ -17,7 +17,6 @@ namespace ECS.Test.Unit
 
         }
 
-        //Test
         [Test]
         public void GetThreshold_Threshold_Is10()
         {
