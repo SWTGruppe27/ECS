@@ -3,7 +3,7 @@
     public class Ecs
     {
         private int _threshold;
-        public int _upperTreshold { get; private set; }
+        public int _upperTreshold { get; set; }
         private readonly ITempSensor _tempSensor;
         private readonly IHeater _heater;
         private readonly IWindow _window;

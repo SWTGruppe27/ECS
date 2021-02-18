@@ -8,12 +8,15 @@ namespace ECS.Test.Unit
         private Ecs uut;
         private FakeHeater uutFakeHeater;
         private FakeTempSensor uutFakeTempSensor;
+        private FakeWindow uutFakeWindow;
+
         [SetUp]
         public void Setup()
         {
             uutFakeTempSensor = new FakeTempSensor();
             uutFakeHeater = new FakeHeater();
-            uut = new Ecs(15, uutFakeTempSensor, uutFakeHeater);
+            uutFakeWindow = new FakeWindow();
+            uut = new Ecs(15, 25, uutFakeTempSensor, uutFakeHeater, uutFakeWindow);
 
         }
 
@@ -47,6 +50,21 @@ namespace ECS.Test.Unit
         {
             uut.Regulate();
             Assert.That(uutFakeHeater.TurnOnCount, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Regulate_CloseWindow_CloseWindowCountIs1()
+        {
+            uut.Regulate();
+            Assert.That(uutFakeWindow.CloseWindowCount, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Regulate_OpenWindow_OpenWindowCountIs1()
+        {
+            uut._upperTreshold = 2;
+            uut.Regulate();
+            Assert.That(uutFakeWindow.OpenWindowCount, Is.EqualTo(1));
         }
     }
 }

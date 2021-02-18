@@ -45,6 +45,7 @@
     <Compile Include="ECS.cs" />
     <Compile Include="FakeHeater.cs" />
     <Compile Include="FakeTempSensor.cs" />
+    <Compile Include="FakeWindow.cs" />
     <Compile Include="Heater.cs" />
     <Compile Include="IHeater.cs" />
     <Compile Include="ITempSensor.cs" />
