@@ -3,14 +3,19 @@
     public class Ecs
     {
         private int _threshold;
+        public int _upperTreshold { get; private set; }
         private readonly ITempSensor _tempSensor;
         private readonly IHeater _heater;
+        private readonly IWindow _window;
 
-        public Ecs(int thr, ITempSensor tempSensor, IHeater heater)
+        public Ecs(int thr, int upperThr, ITempSensor tempSensor, IHeater heater, IWindow window)
         {
             SetThreshold(thr);
             _tempSensor = tempSensor;
             _heater = heater;
+            _window = window;
+            _upperTreshold = upperThr;
+
         }
 
         public void Regulate()
@@ -20,6 +25,15 @@
                 _heater.TurnOn();
             else
                 _heater.TurnOff();
+
+            if (t >  _upperTreshold)
+            {
+                _window.Open();
+            }
+            else
+            {
+                _window.Close();
+            }
 
         }
 
