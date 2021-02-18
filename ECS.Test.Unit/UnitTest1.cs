@@ -18,7 +18,10 @@ namespace ECS.Test.Unit
         }
 
         [Test]
-        public void GetTreshold_Treshold_Is10
+        public void GetTreshold_Treshold_Is10()
+        {
+
+        }
 
         [Test]
         public void Regulate_TurnOnHeater_TurnOnCountIsOne()
