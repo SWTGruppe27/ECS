@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ECS.Legacy
 {
-    class FakeTempSensor : ITempSensor
+    public class FakeTempSensor : ITempSensor
     {
         public int GetTemp()
         {

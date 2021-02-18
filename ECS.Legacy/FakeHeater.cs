@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ECS.Legacy
 {
-    class FakeHeater : IHeater
+    public class FakeHeater : IHeater
     {
         public int TurnOnCount { get; private set;}
         public int TurnOffCount { get; private set; }
