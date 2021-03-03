@@ -57,6 +57,14 @@ namespace ECS.Test.Unit.NSubstitute
             uutHeater.RunSelfTest().Returns(false);
             Assert.That(uut.RunSelfTest, Is.False);
         }
+        [Test]
+        public void RunSelfTest2_retuns_OneIsFalse()
+        {
+            uutTempSensor.RunSelfTest().Returns(false);
+            uutHeater.RunSelfTest().Returns(true);
+            Assert.That(uut.RunSelfTest, Is.False);
+        }
+
 
         [Test]
         public void Regulate_TempBelowThreshold_HeaterTurnedOn()
