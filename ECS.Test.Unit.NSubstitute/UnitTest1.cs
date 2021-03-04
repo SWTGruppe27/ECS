@@ -83,6 +83,14 @@ namespace ECS.Test.Unit.NSubstitute
         }
 
         [Test]
+        public void Regulate_TempIsAtThreshold_HeaterTurnedOff()
+        {
+            uutTempSensor.GetTemp().Returns(25);
+            uut.Regulate();
+            uutHeater.Received(1).TurnOff();
+        }
+
+        [Test]
         public void Regulate_TempOverUpperThreshold_OpenWindow()
         {
             uutTempSensor.GetTemp().Returns(31);
@@ -94,6 +102,14 @@ namespace ECS.Test.Unit.NSubstitute
         public void Regulate_TempUnderUpperThreshold_CloseWindow()
         {
             uutTempSensor.GetTemp().Returns(29);
+            uut.Regulate();
+            uutWindow.Received(1).Close();
+        }
+
+        [Test]
+        public void Regulate_TempIsAtUpperThreshold_CloseWindow()
+        {
+            uutTempSensor.GetTemp().Returns(30);
             uut.Regulate();
             uutWindow.Received(1).Close();
         }
